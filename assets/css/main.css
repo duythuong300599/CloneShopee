@@ -1,0 +1,245 @@
+.header {
+  height: 120px;
+  background-image: linear-gradient(0, #ff6533, #f63e2e);
+}
+
+.header__navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__navbar-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 4px;
+}
+
+.header__navbar-item {
+  margin: 0 8px;
+  position: relative;
+  min-height: 26px;
+}
+
+.header__navbar-item-has-notify:hover .header__notify {
+  display: block;
+}
+
+.header__navbar-item--qr:hover .header__qr {
+  display: block;
+}
+
+.header__navbar-item,
+.header__navbar-item-link {
+  display: inline-block;
+  font-size: 1.4rem;
+  color: var(--white--color);
+  text-decoration: none;
+  font-weight: 300;
+}
+
+.header__navbar-item,
+.header__navbar-item-link,
+.header__navbar-item-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.header__navbar-item:hover,
+.header__navbar-item-link:hover,
+.header__navbar-icon-link:hover {
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+}
+
+.header__navbar-item--strong {
+  font-weight: 400;
+}
+
+.header__navbar-item--separate::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-left: 2px solid #f86c5c;
+  height: 14px;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.header__navbar-icon-link {
+  color: var(--white--color);
+  text-decoration: none;
+  padding: 0 4px;
+}
+
+.header__navbar-icon {
+  font-size: 1.6rem;
+}
+
+.header__navbar-item--no-pointer {
+  cursor: text;
+  color: var(--white--color);
+}
+
+/* Header QR code */
+
+.header__qr {
+  background: var(--white--color);
+  width: 184px;
+  position: absolute;
+  left: 0;
+  top: 120%;
+  padding: 8px;
+  border-radius: 2px;
+  display: none;
+}
+
+.header__qr::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  left: 0;
+  top: -16px;
+}
+
+.header__qr-img {
+  width: 100%;
+}
+
+.header__qr-apps {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__qr-link:first-child {
+  margin-left: 11px;
+}
+
+.header__qr-link:last-child {
+  margin-right: 11px;
+}
+
+.header__qr-download-img {
+  height: 16px;
+}
+
+/* Notify */
+
+.header__notify {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  width: 404px;
+  background-color: #fff;
+  border: 1px solid #d3d3d3;
+  transform-origin: calc(100% - 20px) top;
+  animation: headerNotifyGrow ease-in-out 0.25s;
+  display: none;
+}
+
+.header__notify::before {
+  content: "";
+  border-style: solid;
+  border-width: 20px 30px;
+  border-color: transparent transparent var(--white--color) transparent;
+  position: absolute;
+  right: 0px;
+  top: -32px;
+}
+
+.header__notify::after {
+  content: "";
+  position: absolute;
+  width: 90px;
+  right: 0;
+  top: -16px;
+  height: 20px;
+  display: block;
+}
+
+@keyframes headerNotifyGrow {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.header__notify-header {
+  height: 40px;
+  background-color: var(--white--color);
+  cursor: default;
+}
+
+.header__notify-header h3 {
+  color: #999;
+  margin: 0 0 0 12px;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 40px;
+}
+
+.header__notify-list {
+  padding-left: 0;
+}
+
+.header__notify-item {
+  display: flex;
+}
+
+.header__notify-item:hover {
+  background-color: #f7f7f7;
+}
+
+.header__notify-item--read {
+  background-color: rgba(238, 75, 43, 0.1);
+}
+
+.header__notify-link {
+  display: flex;
+  padding: 12px;
+  width: 100%;
+  text-decoration: none;
+}
+
+.header__notify-img {
+  width: 48px;
+  object-fit: contain;
+}
+
+.header__notify-body {
+  padding-left: 12px;
+}
+
+.header__notify-name {
+  display: block;
+  font-size: 1.4rem;
+  color: var(--text--color);
+  font-weight: 500;
+  line-height: 1.8rem;
+}
+
+.header__notify-descriptions {
+  display: block;
+  font-size: 1.2rem;
+  color: #756f6e;
+  margin-top: 6px;
+}
+
+.header__notify-footer {
+  text-align: center;
+}
+
+.header__notify-footer-btn {
+  text-decoration: none;
+  color: var(--text--color);
+  padding: 8px;
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
